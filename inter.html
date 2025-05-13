@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2025 - Festejando a conexão campo cidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset e estilos globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #2e7d32, #81c784);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            height: 100px;
+            margin-right: 25px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #1b5e20;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+            display: inline-block;
+        }
+        
+        nav a:hover {
+            background-color: #4c8c4a;
+            transform: translateY(-3px);
+        }
+        
+        /* Conteúdo principal */
+        main {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 3rem;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            margin-bottom: 4rem;
+            transition: transform 0.3s;
+        }
+        
+        .hero:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-height: 400px;
+            background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding: 3rem;
+        }
+        
+        .hero-text h2 {
+            color: #2e7d32;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .hero-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            border: 2px solid #2e7d32;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: #2e7d32;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+        
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content {
+            padding: 2rem;
+        }
+        
+        .card-content h3 {
+            color: #1b5e20;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .card-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Seção sobre */
+        .about-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 5rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-section h2 {
+            color: #1b5e20;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        
+        .about-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Seção de vídeo */
+        .video-section {
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+        
+        .video-section h2 {
+            color: #1b5e20;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Seção de depoimentos */
+        .testimonials {
+            margin-bottom: 5rem;
+        }
+        
+        .testimonials h2 {
+            color: #1b5e20;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: #81c784;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+            opacity: 0.3;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 1rem;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .author-info h4 {
+            color: #1b5e20;
+            margin-bottom: 0.2rem;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Seção de números */
+        .numbers-section {
+            background: linear-gradient(135deg, #2e7d32, #81c784);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+        
+        .numbers-section h2 {
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+        }
+        
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .number-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem 1rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .number-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Seção de parceiros */
+        .partners-section {
+            margin-bottom: 5rem;
+        }
+        
+        .partners-section h2 {
+            color: #1b5e20;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-size: 2.2rem;
+        }
+        
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .partner-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background-color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 5rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            color: #1b5e20;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .newsletter p {
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        
+        .newsletter-form input:focus {
+            border-color: #2e7d32;
+        }
+        
+        .newsletter-form button {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #1b5e20;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            padding: 0 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #81c784;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #81c784;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .hero-text {
+                padding: 2rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-image {
+                width: 100%;
+                min-height: 300px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 50px;
+                margin-bottom: 1rem;
+            }
+            
+            .newsletter-form button {
+                border-radius: 50px;
+                padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 0 1.5rem;
+            }
+            
+            .card-content {
+                padding: 1.5rem;
+            }
+            
+            .about-section, .newsletter {
+                padding: 2rem 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-overlay"></div>
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/100x100?text=Agrinho" alt="Logo Agrinho" class="logo">
+            <h1>Agrinho 2025</h1>
+        </div>
+        <p class="subtitle">"Festejando a conexão campo cidade: cultivando laços, colhendo progresso"</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre o Projeto</a></li>
+            <li><a href="#atividades">Atividades</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h2>Campo e cidade: uma só força!</h2>
+                <p>O Agrinho 2025 celebra a interdependência entre o campo e a cidade, mostrando como essa relação é fundamental para o desenvolvimento sustentável do nosso país. Através de ações educativas, culturais e sociais, promovemos a integração entre esses dois universos que se complementam.</p>
+                <p>Junte-se a nós nessa celebração da vida no campo e na cidade, onde cada um tem um papel essencial no ciclo da produção, distribuição e consumo consciente.</p>
+                <a href="#participar" class="cta-button">Quero Participar</a>
+            </div>
+        </section>
+        
+        <section class="sections">
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1492496913980-501348b61469?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="card-content">
+                    <h3>Alimentação Sustentável</h3>
+                    <p>Conheça projetos que conectam produtores rurais diretamente com consumidores urbanos, promovendo alimentação saudável e reduzindo desperdícios.</p>
+                    <a href="#" class="read-more">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="card-content">
+                    <h3>Educação Ambiental</h3>
+                    <p>Programas que levam estudantes urbanos para conhecer o campo e trazem estudantes rurais para compartilhar seus conhecimentos nas cidades.</p>
+                    <a href="#" class="read-more">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="card-content">
+                    <h3>Tecnologia no Campo</h3>
+                    <p>Inovações tecnológicas que aproximam o campo da cidade, facilitando a comunicação, o comércio e o compartilhamento de conhecimentos.</p>
+                    <a href="#" class="read-more">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="sobre" class="about-section">
+            <h2>Sobre o Agrinho 2025</h2>
+            <p>O Programa Agrinho é uma iniciativa que visa promover a reflexão sobre questões ambientais, de saúde, ética e cidadania. Em 2025, com o tema "Festejando a conexão campo cidade", buscamos destacar como essas duas realidades estão intrinsecamente ligadas e como podemos fortalecer esses laços para um futuro mais sustentável e harmonioso.</p>
+            
+            <p>Através de concursos, eventos e materiais educativos, envolvemos estudantes, professores e comunidades em todo o país. Neste ano especial, focamos em:</p>
+            
+            <ul style="margin: 1.5rem 0; padding-left: 2rem;">
+                <li style="margin-bottom: 0.8rem;">Promover o entendimento mútuo entre moradores de áreas urbanas e rurais</li>
+                <li style="margin-bottom: 0.8rem;">Valorizar a produção agrícola sustentável</li>
+                <li style="margin-bottom: 0.8rem;">Fortalecer os circuitos curtos de comercialização</li>
+                <li style="margin-bottom: 0.8rem;">Incentivar o turismo rural consciente</li>
+                <li style="margin-bottom: 0.8rem;">Difundir tecnologias que integram campo e cidade</li>
+            </ul>
+            
+            <p>Nosso objetivo é criar pontes permanentes entre esses dois mundos, mostrando que o desenvolvimento de um é essencial para o progresso do outro.</p>
+        </section>
+        
+        <section class="video-section">
+            <h2>Conheça o Agrinho 2025</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <section id="depoimentos" class="testimonials">
+            <h2>Quem participa recomenda</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Participar do Agrinho mudou minha percepção sobre a importância do campo. Hoje entendo melhor de onde vem nossa comida e valorizo muito mais o trabalho dos agricultores.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/women/32.jpg');"></div>
+                        <div class="author-info">
+                            <h4>Ana Claudia</h4>
+                            <p>Estudante - Curitiba/PR</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>O programa trouxe minha escola rural para perto das crianças da cidade. Foi incrível ver o interesse delas em aprender sobre plantio e colheita.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/45.jpg');"></div>
+                        <div class="author-info">
+                            <h4>Carlos Eduardo</h4>
+                            <p>Professor - Londrina/PR</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Como produtor rural, pude mostrar meu trabalho diretamente aos consumidores. Isso valorizou minha produção e criou laços importantes com a comunidade urbana.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background-image: url('https://randomuser.me/api/portraits/men/68.jpg');"></div>
+                        <div class="author-info">
+                            <h4>José Roberto</h4>
+                            <p>Agricultor - Maringá/PR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="numbers-section">
+            <h2>Agrinho em Números</h2>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="number">25+</div>
+                    <div class="number-label">Anos de história</div>
+                </div>
+                <div class="number-card">
+                    <div class="number">1.2M</div>
+                    <div class="number-label">Estudantes impactados</div>
+                </div>
+                <div class="number-card">
+                    <div class="number">80K</div>
+                    <div class="number-label">Professores envolvidos</div>
+                </div>
+                <div class="number-card">
+                    <div class="number">500+</div>
+                    <div class="number-label">Municípios participantes</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="partners-section">
+            <h2>Nossos Parceiros</h2>
+            <div class="partners-grid">
+                <img src="https://via.placeholder.com/150x80?text=Governo" alt="Governo" class="partner-logo">
+                <img src="https://via.placeholder.com/150x80?text=Empresa+A" alt="Empresa A" class="partner-logo">
+                <img src="https://via.placeholder.com/150x80?text=Universidade" alt="Universidade" class="partner-logo">
+                <img src="https://via.placeholder.com/150x80?text=ONG" alt="ONG" class="partner-logo">
+                <img src="https://via.placeholder.com/150x80?text=Empresa+B" alt="Empresa B" class="partner-logo">
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <h2>Fique por dentro</h2>
+            <p>Assine nossa newsletter e receba as últimas novidades sobre o Agrinho 2025, eventos, materiais educativos e oportunidades de participação.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Digite seu melhor e-mail" required>
+                <button type="submit">Assinar</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Agrinho 2025</h3>
+                <p>"Festejando a conexão campo cidade"</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#sobre">Sobre o Projeto</a></li>
+                    <li><a href="#atividades">Atividades</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Materiais</h3>
+                <ul>
+                    <li><a href="#">Cartilhas Educativas</a></li>
+                    <li><a href="#">Planos de Aula</a></li>
+                    <li><a href="#">Vídeos</a></li>
+                    <li><a href="#">Apresentações</a></li>
+                    <li><a href="#">Regulamentos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> Av. das Nações, 1000 - Curitiba/PR</li>
+                    <li><i class="fas fa-phone" style="margin-right: 8px;"></i> (41) 3333-3333</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> contato@agrinho.org.br</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 Programa Agrinho. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
